@@ -42,6 +42,11 @@ td {
   padding: 0;
 }
 
+body {
+  height: 100%;
+  width: 100%;
+}
+
 #app {
   background-color: #cfe2f3;
   height: 100%;
@@ -51,7 +56,7 @@ td {
 /* 1ec4c4 */
 .study-header {
   background-color: #1ec4c4;
-  height: 20px;
+  height: 60px;
   width: 100%;
 }
 </style>
