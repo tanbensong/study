@@ -4,13 +4,22 @@
       <div :class="headerClass">
         <div class="row">
           <div class="col-md-12">
-            <div class="pull-left study-logo"  v-if="windowWidth > 770">
-              <img src="@/assets/home-logo.png" alt="home-logo">
+            <div class="pull-left study-logo" v-if="windowWidth > 770">
+              <img src="@/assets/home-logo.png" alt="home-logo" />
             </div>
             <div class="pull-right">
-              <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-                background-color="#1ec4c4" text-color="#fff" active-text-color="#ff9800">
-                <el-menu-item index="1"><i class="fa fa-home fa-fw"></i> 首页</el-menu-item>
+              <el-menu
+                :default-active="activeIndex"
+                class="el-menu-demo"
+                mode="horizontal"
+                @select="handleSelect"
+                background-color="#1ec4c4"
+                text-color="#fff"
+                active-text-color="#ff9800"
+              >
+                <el-menu-item index="1"
+                  ><i class="fa fa-home fa-fw"></i> 首页</el-menu-item
+                >
                 <el-submenu index="2">
                   <template slot="title">运维笔录</template>
                   <el-menu-item index="2-1">服务器运维</el-menu-item>
@@ -26,7 +35,9 @@
                   <el-menu-item index="3-2">python 脚本</el-menu-item>
                 </el-submenu>
                 <el-menu-item index="4" disabled>个人中心</el-menu-item>
-                <el-menu-item index="5" class="with-divider"><i class="fa fa-user fa-fw"></i> 登陆·注册</el-menu-item>
+                <el-menu-item index="5" class="with-divider"
+                  ><i class="fa fa-user fa-fw"></i> 登陆·注册</el-menu-item
+                >
               </el-menu>
             </div>
           </div>
@@ -38,16 +49,16 @@
 
 <script>
 export default {
-  name: 'HomeHeader',
+  name: "HomeHeader",
   data() {
     return {
-      activeIndex: '1',
+      activeIndex: "1",
       windowWidth: window.innerWidth,
       headerClass: {}, // 初始化 headerClass 对象
     };
   },
   mounted() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener("resize", this.handleResize);
     this.setHeaderClass(); // 初始化设置 headerClass
   },
   methods: {
@@ -57,15 +68,18 @@ export default {
     },
     setHeaderClass() {
       this.headerClass = {
-        'container': window.innerWidth > 1000,
-        'container-fluid': window.innerWidth <= 1000,
+        container: window.innerWidth > 1000,
+        "container-fluid": window.innerWidth <= 1000,
       };
+    },
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
     },
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-}
+    window.removeEventListener("resize", this.handleResize);
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
