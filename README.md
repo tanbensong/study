@@ -49,22 +49,30 @@ python manage.py runserver
 
 ## study-web
 
-### Project setup
+### 安装依赖
 
 ```bash
 npm install
 ```
 
-#### Compiles and hot-reloads for development
+#### 本地运行项目
 
 ```bash
 npm run serve
 ```
 
-#### Compiles and minifies for production
+#### 构建项目
 
 ```bash
 npm run build
+```
+
+#### 切换镜像源
+
+```bash
+npm config set registry https://registry.npmjs.org/
+npm config set registry https://npm.pkg.github.com
+npm config set registry https://registry.npmmirror.com
 ```
 
 ### Lints and fixes files

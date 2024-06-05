@@ -1,6 +1,7 @@
 <template>
   <div>
     <HomeHeaderVue/>
+    <HomeCount/>
   </div>
 </template>
 
@@ -8,7 +9,8 @@
 export default {
   name: 'HomeView',
   components: {
-    HomeHeaderVue: () => import('@/components/HomeHeader.vue')
+    HomeHeaderVue: () => import('@/components/HomeHeader.vue'),
+    HomeCount: () => import('@/components/HomeCount.vue'),
   }
 }
 </script>

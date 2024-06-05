@@ -43,22 +43,23 @@ export default {
     return {
       activeIndex: '1',
       windowWidth: window.innerWidth,
+      headerClass: {}, // 初始化 headerClass 对象
     };
-  },
-  computed: {
-    headerClass() {
-      return {
-        'container': window.innerWidth > 1000, // 根据屏幕宽度动态切换的样式类
-        'container-fluid': window.innerWidth <= 1000, // 根据屏幕宽度动态切换的样式类
-      };
-    },
   },
   mounted() {
     window.addEventListener('resize', this.handleResize);
+    this.setHeaderClass(); // 初始化设置 headerClass
   },
   methods: {
     handleResize() {
       this.windowWidth = window.innerWidth;
+      this.setHeaderClass(); // 在窗口大小变化时重新设置 headerClass
+    },
+    setHeaderClass() {
+      this.headerClass = {
+        'container': window.innerWidth > 1000,
+        'container-fluid': window.innerWidth <= 1000,
+      };
     },
   },
   beforeDestroy() {
